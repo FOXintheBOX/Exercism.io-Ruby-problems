@@ -10,10 +10,8 @@ class Robot
     @@names << @name
   end
   def generate_name()
-    new_rand_name = ""
-    2.times { new_rand_name << ('A'..'Z').to_a.sample }
-    new_rand_name << rand(1000).to_s.rjust(3, "0")
-    generate_name() unless @@names.find_index(new_rand_name) == nil
+    new_rand_name = ('A'..'Z').to_a.sample(2).join << rand(1000).to_s.rjust(3, "0")
+    new_rand_name = generate_name() unless @@names.find_index(@new_rand_name) == nil
     new_rand_name
   end
 end
